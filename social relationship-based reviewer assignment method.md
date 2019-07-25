@@ -21,7 +21,7 @@ Given the set of paper $P$ and the set of reviewers $R$, our goal is to assign e
 3. the research area of reviewers and research topic of aritcles should be as similar as possible;
 4. the social relationship among authors and reivewers should be as weak as possible.
 
-If we use a matrix $M \in R^{n\times m}$ to denote the allocation scheme, where $n=|P|$ is the total number of atricles and $m=|R|$ is the number of reviewers. For every element $m_{ij}$ in $M$, if $m_{ij}=1$ means reviewer $j$ is assigned to atricle $i$, otherwise $m_{ij}=0$. $M^i$ is the $i$-th row of $M$ and $M_j$ is the $j$-th column of $M$. Then we should ensure that
+If we use a matrix $M \in R^{|P|\times |R|}$ to denote the allocation scheme, where $|P|$ is the total number of atricles and $|R|$ is the number of reviewers. For every element $m_{ij}$ in $M$, if $m_{ij}=1$ means reviewer $j$ is assigned to atricle $i$, otherwise $m_{ij}=0$. $M^i$ is the $i$-th row of $M$ and $M_j$ is the $j$-th column of $M$. Then we should ensure that
 
 1. $\forall i>0 \And i \le n,|M^i|=k$, and
 2. $\forall j>0 \And j \le m,|M_j| \le l_j$,
