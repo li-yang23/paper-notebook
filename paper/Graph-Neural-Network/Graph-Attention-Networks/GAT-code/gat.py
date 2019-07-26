@@ -1,11 +1,11 @@
 import numpy as np
 import tensorflow as tf
 
-from utils import layers
+from .utils import layers
 from base_gattn import BaseGAttN
 
-class GAT(BaseGATTn):
-	def inference(inputs,nb_classes,nb_nodes,training,attn_drop,ffd_drop,
+class GAT(BaseGAttN):
+	def inference(self,inputs,nb_classes,nb_nodes,training,attn_drop,ffd_drop,
 				bias_mat,hid_units,n_heads,activation=tf.nn.elu,residual=False):
 		"""do not know yet
 		
