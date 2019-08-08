@@ -13,7 +13,7 @@ class DGI(nn.Module):
         整个pipline包括一个图卷积网络，一个readout函数和一个分类器（discriminator）？
         
         首先是要利用损坏函数（corruption function）对网络进行负采样
-        然后是将输入的图输入图卷积网络得到patch表征（补丁表征？只聚合了网络部分特征的局部表征）
+        然后是将输入的图输入图卷积网络得到patch表征（只聚合了网络部分特征的局部表征）
         然后将负例传入图卷积网络得到负例的patch表征
         最后将输入图的patch表征进行结合得到global表征s
 
