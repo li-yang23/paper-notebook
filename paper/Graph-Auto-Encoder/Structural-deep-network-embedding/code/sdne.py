@@ -40,7 +40,7 @@ class SDNE:
         self.X = tf.placeholder('float', [None,config.struct[0]])
 
         self.__make_compute_graph()
-        self.loss = self.__make_compute_graph(config)
+        self.loss = self.__make_loss(config)
         self.optimizer = tf.train.RMSPropOptimizer(config.learning_rate).minimize(self.loss)
     
     def __make_compute_graph(self):
