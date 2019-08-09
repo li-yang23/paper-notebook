@@ -12,7 +12,7 @@ class SDNE:
         self.config = config
 
         tf_config = tf.ConfigProto()
-        tf_config.GPUOptions.allow_growth = True
+        tf_config.gpu_options.allow_growth = True
         self.sess = tf.Session(config=tf_config)
 
         self.layers = len(config.struct) # config.struct是一个数组,应该表示的是每一层的单元数，即输出维度
