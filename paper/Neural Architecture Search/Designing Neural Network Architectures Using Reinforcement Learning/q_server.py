@@ -1,5 +1,9 @@
 """
 https://github.com/bowenbaker/metaqnn/blob/master/q_server.py
+https://blog.csdn.net/suoyan1539/article/details/79571010
+https://blog.csdn.net/Allenalex/article/details/78220926
+https://blog.csdn.net/qq_30615903/article/details/80739243
+https://zhuanlan.zhihu.com/p/35261164
 """
 from twisted.internet import reactor,protocol
 from twisted.internet.defer import DeferredLock
