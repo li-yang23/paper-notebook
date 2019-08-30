@@ -38,6 +38,7 @@ class QServer(protocol.ServerFactory):
                  hyper_parameters,       # 超参数，包含每个神经网络层的相关的参数tuple
                  epsilon=None,           # 反向3，和强化学习步骤相关，因为使用的是epsilon贪心策略
                  number_models=None):
+                 
         self.protocol = QConnection
         self.new_net_lock = DeferredLock()
         self.clients = {} # name of connection is key, each value is dict with {'connection','net','iters_sampled'}
