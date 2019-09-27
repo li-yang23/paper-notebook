@@ -110,4 +110,5 @@ $$
 
 ### 使用节点内容的Network Embedding
 
-+ MMDW是利用节点的标签信息的半监督network embedding方法。
++ MMDW是利用节点的标签信息的半监督network embedding方法。MMDW使用基于DeepWalk的矩阵分解，采用支持向量机，并结合标签信息以找到最佳的分类边界。通过同时优化支持向量机的最大余量（max-margin）分类器和基于矩阵分解的DeepWalk，以学习具有更大判别能力的节点表征。
++ 是
