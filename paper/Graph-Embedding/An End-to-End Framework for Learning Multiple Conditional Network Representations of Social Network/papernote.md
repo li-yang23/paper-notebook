@@ -4,7 +4,7 @@
 
 ## Motivation
 
-![motivation example](motivation_1.png)
+![motivation example](image/motivation_1.png)
 
 目前的网络表示学习方法都是为结点学习一个单独的嵌入向量，因此就只能表示一种关系的强弱，但是在比如社交网络的许多种网络中，节点之间经常会存在多种角度的相似程度，比如在上面这个网络中，女人和孩子在电影维度上具有相似性，而和男人在书这个维度上相似性更强。因此需要使用多个向量来表示节点间不同维度的相似性。
 
@@ -21,7 +21,7 @@
 
 ## Model: MCNE
 
-![framework](framework.png)
+![framework](image/framework.png)
 
 整个模型流程在introduction中说明，一共分为三个部分，分别是生成多个条件网络表示，学习用户在特定行为上的偏好相似度以及交叉学习多个用户偏好
 
@@ -33,7 +33,7 @@
 
 #### 二值遮罩层
 
-![bmlayer](binary_mask_layer.png)
+![bmlayer](image/binary_mask_layer.png)
 
 将$U^0$视作第0层的图神经网络的嵌入层。使用一个二值遮罩层来将每层的节点表征划分成不同的向量子空间。每一层都要经过一个实值的权重矩阵$M_r^k\in\mathbb{R}^{|C+1|\times d_k}$，并使用额外的维度表示其他没有包含在训练数据集中的用户行为偏好。最后通过一个硬阈值函数
 $$
@@ -54,7 +54,7 @@ $$
 
 #### 多维度相似度消息发送操作
 
-![message receive](message_receive.png)
+![message receive](image/message_receive.png)
 
 在二值遮罩层得到了节点的多维条件表示之后，使用图神经网络的消息发送和接受算子得到下一层的节点嵌入向量。由节点$v_i$在边$e_{i,j}$上传播的多维度相似性信息定义为不同行为类的条件网络表征的加权和，即
 $$
@@ -84,8 +84,20 @@ $AGGR$是average pooling操作，用于将节点邻居的多维度相似度聚�
 
 #### 最终的多维度条件网络表征
 
-![final](final.png)
+![final](image/final.png)
 
 堆叠多层向量（stack $k$ layers）*怎么个意思？不懂*，并使用二值遮罩层得到多个条件网络表征。
 
 ### 条件网络表征的交叉学习
+
+使用贝叶斯个性化排序学习用户在每个行为上的偏好相似性。给定类别$c$的记录矩阵$R_c$和条件嵌入$u_{i|c}$，类别的损失函数可以公式化定义为
+$$
+\mathcal{L}_c(R_c,U_c)=-\sum_{(i,p,n)}\ln\sigma(u_{i|c}z_{p|c}-u_{i|c}z_{n|c})+\lambda_1||\Theta_c||^2
+$$
+，其中是项目和在类别上的嵌入向量*项目的嵌入向量？这是怎么得到的？*。对每个结点，我们选择交互的项目作为正样本，然后随机选择无交互项目作为负样本。
+
+同时，用户的多个行为经常是相关的。因此将学习每个条件嵌入作为单独任务，然后使用多任务学习框架交叉学习多条件嵌入，定义为
+$$
+\mathcal{L}(S_R,S_U)=\frac{1}{C}\sum_{c=1}^C\mathcal{L}_c(R_c,U_c)+\lambda||\Theta||^2
+$$
+，其中$\Theta$代表模型中的所有参数。
