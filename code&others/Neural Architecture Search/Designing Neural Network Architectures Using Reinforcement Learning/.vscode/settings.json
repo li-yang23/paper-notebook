@@ -1,0 +1,6 @@
+{
+    "latex-workshop.view.pdf.external.viewer.command": "D:/texlive/2018/bin/win32/texworks.exe",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "%PDF%"
+    ]
+}
