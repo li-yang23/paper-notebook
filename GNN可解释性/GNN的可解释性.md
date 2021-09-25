@@ -1,6 +1,10 @@
 # GNN的可解释性
 
+> 这种可解释性的方法可以用来做社交网络的意见领袖挖掘吗？
+
 主要提供后验的解释，哪条边/节点/特征更加重要，哪种网络模式对指定类型的影响更大
+
+> 跟我所想的应该是三个问题，expressiveness是gnn最好可以达到什么程度，explainability是哪些因素在达到这个程度时提供的影响最大，optimization是如何通过训练尽可能达到理论上最好的程度
 
 ## 个体级别的方法
 
@@ -30,14 +34,23 @@
 
 > 这个适用于大型网络吗，遮罩层存的进内存么
 
-+ [ ] [Real time image saliency for black box classifiers](https://arxiv.org/abs/1705.07857)：后面没有全看懂，但是方法是初始化一个遮罩层，然后遮罩掉一部分输入特征，并和另一个图的反向遮罩结果相加，最终通过优化遮罩层得到对于特征重要性的解释。被遮掉的就是不重要的特征。
-+ [ ] [Interpreting image classifiers by generating discrete masks](https://ieeexplore.ieee.org/abstract/document/9214476/)：采用GAN结构，利用要解释的GN N做判别器，生成器用来得到遮罩层，使用一个概率图来采样得到离散遮罩层，然后得到输入图，用GNN学习输出判断结果。使用policy gradient来更新生成器，最终生成器得到的就是可以保留重要信息的遮罩层，可以过滤出重要的输入特征
-+ [ ] 60
-+ [ ] 42
++ [x] [**Real time image saliency for black box classifiers**](https://arxiv.org/abs/1705.07857)：后面没有全看懂，但是方法是初始化一个遮罩层，然后遮罩掉一部分输入特征，并和另一个图的反向遮罩结果相加，最终通过优化遮罩层得到对于特征重要性的解释。被遮掉的就是不重要的特征。
+
++ [ ] [**Interpreting image classifiers by generating discrete masks**](https://ieeexplore.ieee.org/abstract/document/9214476/)：采用GAN结构，利用要解释的GNN做判别器，生成器用来得到遮罩层，使用一个概率图来采样得到离散遮罩层，然后得到输入图，用GNN学习输出判断结果。使用policy gradient来更新生成器，最终生成器得到的就是可以保留重要信息的遮罩层，可以过滤出重要的输入特征
+
+  > 概率图采样得到遮罩层的方法忘了
+
++ [x] **learning to explain: an information-theoretic perspective on model interpretation**：使用Gumbel-softmax来生成遮罩层，从而使遮罩层变化可以被学习，然后使用一个神经网络来拟合与标签的条件分布，并使其结果和原特征的结果尽可能相似。
+
++ [x] [**Gnnexplainer: Generating explanations for graph neural networks**](https://www.ncbi.nlm.nih.gov/pmc/articles/pmc7138248/)：使用遮罩层遮掉一部分边和节点特征，然后使学到的结果尽可能和原始的结果相近，结构遮罩层直接学习，特征遮罩层使用重参数方法进行梯度更新
+
 + [ ] 43
 + [ ] 51
 + [ ] 52
 + [ ] 53
++ [ ] 61
++ [ ] 62
++ [ ] 63
 
 ### 基于分解的方法
 
