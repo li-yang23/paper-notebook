@@ -119,5 +119,3 @@
     * 解决GNN在学习bad actor节点后易受攻击的问题，设计方法从图中识别bad actor节点
 
 21. [Graph Consistency Based Mean-Teaching for Unsupervised Domain Adaptive Person Re-Identification](https://www.aminer.cn/pub/609ba97491e0113c3c76931b/graph-consistency-based-mean-teaching-for-unsupervised-domain-adaptive-person-re-identification?conf=IJCAI%202021)
-
-

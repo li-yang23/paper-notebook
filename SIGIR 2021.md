@@ -38,3 +38,4 @@
     * 知识图谱 链接预测？图生成？
 17. [Self-supervised Graph Learning for Recommendation](https://www.aminer.cn/pub/5f91548b91e011126509bd5a/self-supervised-graph-learning-for-recommendation?conf=SIGIR%202021)
 18. [Enhanced Graph Learning for Collaborative Filtering via Mutual Information Maximization](https://www.aminer.cn/pub/60b9a1d7e4510cd7c8f70e7c/enhanced-graph-learning-for-collaborative-filtering-via-mutual-information-maximization?conf=SIGIR%202021)
+19. 
