@@ -34,14 +34,14 @@
 
 ### S&P 2022
 
-#### Model Stealing Attacks against inductive GNN
+#### [read] Model Stealing Attacks against inductive GNN
 
 - 目标问题：针对GNN的模型提取攻击，根据与目标模型的交互逆向还原出一个替代模型。
 - 相关工作：已有工作主要集中在图片和文本等任务的模型上，对图数据上的模型没有探索
 - 解决方案：提出第一个针对归纳式GNN的模型窃取攻击方法，系统性的定义了威胁模型，并提出了六种基于提取者的背景知识和目标模型反馈的攻击方法
 - 实验效果：在六个基准数据集上显示提出的攻击方法有较好效果
 
-#### DeepSteal: advanced Model Extractions leveraging efficient weight stealing in memories
+#### [read] DeepSteal: advanced Model Extractions leveraging efficient weight stealing in memories
 
 - 目标问题：模型提取攻击，逆向还原替代模型
 - 相关工作：
@@ -50,11 +50,11 @@
 
 ### USENIX security 2023
 
-#### A Plot is Worth a Thousand Words: model information stealing attacks via scientific plots
+#### [read] A Plot is Worth a Thousand Words: model information stealing attacks via scientific plots
 
 - 研究问题：针对模型提取攻击任务的侧信道攻击方法。
 - 相关工作：
-- 解决方案：发现了一种新的侧信道攻击方法，利用科学画图进行攻击。使用浅层模型训练技术生成训练数据来攻击图片分类任务的目标模型。
+- 解决方案：发现了一种新的侧信道攻击方法，利用科学图像进行攻击。使用浅层模型训练技术生成训练数据来攻击图片分类任务的目标模型。
 - 实验效果：实验结果证明可以有效推理出基于CNN的模型结构或超参数。发现攻击成功主要是由于科学图片的形状，说明攻击在多种场景下鲁棒，最后提出了多种防御机制来降低精度。
 
 #### PCAT: functionality and data stealing from split learning by pseudo-client attack
@@ -73,14 +73,14 @@
 - 解决方案：提出第一个面向预训练编码器的水印方法SSLGuard，为给定的预训练编码器植入水印并输出有水印的版本，浅层训练技术也用于保护水印免受模型窃取攻击的影响。
 - 实验效果：实验证明SSLGuard在水印植入和验证上的有效性，以及在模型窃取和其他水印移除攻击（输入噪音，输出扰动，充血，模型修剪和微调）上的鲁棒性
 
-#### On the Privacy Risks of Cell-Based NAS Architecture
+#### [read] On the Privacy Risks of Cell-Based NAS Architecture
 
 - 研究问题：神经网络结构搜索的隐私保护问题
 - 相关工作：已有工作主要关注如何搜索性能更好的网络结构，忽视网络结构对于隐私攻击的鲁棒性。
 - 解决方案：系统性的度量了NAS结构的隐私风险，并探索了基于结构单元搜索的架构的微观模式，衡量了结构单元模式如何影响架构的隐私风险
 - 实验效果：根据实验结果解释了如何设计鲁棒的NAS架构，并且提供了一个理解NAS架构和其他隐私风险隐形联系的通用方法
 
-#### StolenEncoder: stealing pre-trained encoders in self-supervised learning
+#### [read] StolenEncoder: stealing pre-trained encoders in self-supervised learning
 
 - 研究问题：预训练编码器的版权保护问题。
 - 相关工作：
@@ -91,14 +91,14 @@
 
 ### S&P 2022
 
-#### Reconstructing Training Data with Informed Adversaries
+#### [read] Reconstructing Training Data with Informed Adversaries
 
 - 目标问题：训练数据重建问题，在知道除了一个之外的训练数据时，根据模型交互重建剩余的这个未知的数据
 - 相关工作：
 - 解决方案：通过实例化攻击，说明可以在给定模型下重建剩余训练数据。针对通用模型，提出了一种基于训练以目标模型权重位输入，训练数据为输出的重建网络的攻击策略。
 - 实验效果：在MNIST和CIFAR-10上验证了攻击策略的有效性，系统分析了影响重建的机器学习训练环节，并理论分析了足以缓解重建攻击的差分隐私程度。在接触到模型存储时可以有效进行重建攻击，标准的模型已经包含足够的信息来进行高精确度的重建，在utility degradation较小的参数域进行隐私差分就可以有效缓解此类攻击
 
-#### LINKTELLER: recovering private edges from GNN via influence analysis
+#### [read] LINKTELLER: recovering private edges from GNN via influence analysis
 
 - 目标问题：联邦学习下的边隐私问题，在向远端发送节点特征信息进行训练后，利用远端的API预测测试节点间的边信息。
 - 相关工作：
@@ -128,7 +128,7 @@
 - 解决方案：提出了一种基于双向transformer的猜测框架PassBERT，在密码猜测攻击中使用预训练范式。首先准备一个预训练的密码模型，然后为三种攻击场景（有条件密码猜测，目标密码猜测，基于自适应规则的密码猜测）设计特定的微调方法。
 - 实验效果：微调模型可以在三种攻击场景下超过有超过SOTA 14.53%，21.82%和4.86%的表现。，最后提出了一种混合密码强度指标来缓和三种攻击效果。
 
-#### GAP: differentially private graph neural networks with aggregation perturbation
+#### [read] GAP: differentially private graph neural networks with aggregation perturbation
 
 - 研究问题：学习具备差分隐私能力的GNN模型问题，目标是保护敏感的图结构信息和其他相关数据。
 - 相关工作：已有方法无法同时实现节点级和边级的隐私保护，或需要公开数据支持，以及无法应用于复杂图神经网络。
@@ -160,14 +160,14 @@
 - 解决方案：将属性推理与数据归因在多种攻击者可获得训练数据的假设下进行了详尽的对比实验。
 - 实验效果：目前的属性推理方法并不比只知道训练数据分布而不能接触模型的对抗方法好，黑盒属性推理难以学到任何不用模型就学不到的知识，但白盒攻击可以有效的识别某些不接触模型就识别不到的敏感属性值。
 
-#### LPGNet: link private graph networks for node classification
+#### [read] LPGNet: link private graph networks for node classification
 
 - 研究问题：图神经网络上的数据窃取攻击，边窃取攻击。在不接触网络模型的前提下推理出现在训练图中的边是可行的。
 - 相关工作：
 - 解决方案：提出了新的网络架构LPGNet在有隐私敏感的边的图上训练图神经网络模型，通过新的图结构使用方法为边的使用提供差分隐私保证。
 - 实验效果：实验结果说明LPGNet相较不使用边信息的隐私保护架构有更好的可用性，相较使用全图结构的GCN在面对边窃取攻击时更鲁棒。相较SOTA隐私保护GCN而言有更好的可用性和隐私保护的平衡。
 
-#### Finding MNEMON: reviving memories of node embeddings
+#### [read] Finding MNEMON: reviving memories of node embeddings
 
 - 研究问题：图神经网络模型的数据窃取攻击问题
 - 相关工作：当前工作主要关注隐藏图上信息或者理解图神经网络的安全性和隐私问题，没有关注上游模型和下游任务pipeline整合时的隐私风险。
@@ -220,7 +220,7 @@
 
 ### USENIX security 2023
 
-#### FreeEagle: detecting complex neural trojans in data-free cases
+#### [read] FreeEagle: detecting complex neural trojans in data-free cases
 
 - 研究问题：复杂网络上的后门攻击问题。
 - 相关工作：大多数现有方法都假设防御着可以获得一部分干净的验证样本或者有触发词的样本,在某些真实场景中并不成立
@@ -349,7 +349,7 @@
 - 解决方案：设计了两种API让下游客户在最小化查询次数的前提下验证分类器的稳定性，并发现使用谱范数正则化项与训练模型可以让下游客户建造更加稳定的分类器。
 - 实验效果：
 
-#### Adversarial Robustness for tabular data through cost and utility awareness
+#### [read] Adversarial Robustness for tabular data through cost and utility awareness
 
 - 目标问题：表格数据上模型的对抗鲁棒性问题。
 - 相关工作：目前的对抗稳定性工作主要关注图像和文本领域的机器学习模型，没有考虑表格数据领域。这些模型无法捕捉到成本不明显的攻击，不同的攻击样本可以对实用性造成不同的影响，无法直接应用于表格数据。
@@ -462,7 +462,7 @@
 
 ### USENIX security 2023
 
-#### AIRS: explanation for deep reinforcement learning based security applications
+#### [read] AIRS: explanation for deep reinforcement learning based security applications
 
 - 研究问题：安全应用中的深度强化学习模型可解释性问题。
 - 相关工作：已有的深度强化学习解释方法通常关注寻找重要特征，不适用于安全应用，在解释的精确性，有效性和模型调试能力上有所欠缺
@@ -485,7 +485,7 @@
 - 解决方案：提出MeTFA框架来量化不确定性并提升解释算法的稳定性。MeTFA包括两个功能，验证一个特征的重要程度并生成重要性地图，计算特征归因的可信程度并生成MeTFA光滑地图来提升解释的稳定性。
 - 实验效果：MeTFA提升了解释的可视化质量，在保持解释的可信度的同时显著降低了不稳定性。MeTFA光滑解释可以有效提升可信度
 
-#### AI/ML for Network Security: the emperor has no clothes
+#### [read] AI/ML for Network Security: the emperor has no clothes
 
 - 研究问题：模型的可解释性问题，无法用足够的细节来描述模型阻挠用户信任并使用模型。
 - 相关工作：现有方法难以在高精度捕获模型内部决策的同时保持可用性（规模够小方便人类理解）。
@@ -496,7 +496,7 @@
 
 ### NDSS 2023
 
-#### Machine Unlearning of Features and Labels
+#### [read] Machine Unlearning of Features and Labels
 
 - 目标问题：模型遗忘问题，从机器学习模型中移除信息。
 - 相关工作：目前的机器遗忘方法只能有效移除单个数据点，无法扩展到大量特征和标签需要移除的场景。
@@ -505,7 +505,7 @@
 
 ### CCS 2022
 
-#### Graph Unlearning
+#### [read] Graph Unlearning
 
 - 研究问题：图上的机器遗忘问题，移除掉一些训练数据对机器学习模型的影响。
 - 相关工作：SOTA机器遗忘方法SISA无法直接应用于图数据上，将训练数据分片的做法会严重损害图的结构信息，进而损害模型可用性。
@@ -516,7 +516,7 @@
 
 ### NDSS 2023
 
-#### Fusion: efficient and secure inference resilient to malicious servers
+#### [read] Fusion: efficient and secure inference resilient to malicious servers
 
 - 目标问题：安全机器学习推理问题。
 - 相关工作：已有方法假设服务器是半诚实的，即遵守协议但尝试推理获得额外信息，但真实世界中服务器可能是有恶意的。已有关注服务器可能偏离协议的方法没有验证模型的准确性，同时将服务端模型和客户端输入的隐私一并保存。
